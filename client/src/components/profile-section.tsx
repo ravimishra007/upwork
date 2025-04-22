@@ -8,6 +8,7 @@ interface ProfileSectionProps {
   profileImage: string;
 }
 
+
 export default function ProfileSection({ 
   name, 
   bio, 

@@ -13,14 +13,103 @@ import { BarChart2 } from "lucide-react";
 import { Link } from "wouter";
 
 
+
+
 export default function Home() {
   // Set page title
   useEffect(() => {
     document.title = "Stanislav Nikov | Web Developer & Designer";
   }, []);
 
+
+  const demoLinks= [
+    {
+      id: "1",
+      userId: 1,
+      platform: "facebook",
+      name: "Facebook",
+      username: "eyedealist",
+      url: "https://www.facebook.com/eyedealist",
+      active: true,
+      order: 0
+    },
+    {
+      id: "2",
+      userId: 1,
+      platform: "linkedin",
+      name: "LinkedIn",
+      username: "stanislav-nikov",
+      url: "https://www.linkedin.com/in/stanislav-nikov/",
+      active: true,
+      order: 1
+    },
+    {
+      id: "3",
+      userId: 1,
+      platform: "twitter",
+      name: "Twitter/X",
+      username: "@StanislavMNikov",
+      url: "https://x.com/StanislavMNikov",
+      active: true,
+      order: 2
+    },
+    {
+      id: "4",
+      userId: 1,
+      platform: "instagram",
+      name: "Instagram",
+      username: "@stansnikov",
+      url: "https://www.instagram.com/stansnikov/",
+      active: true,
+      order: 3
+    },
+    {
+      id: "5",
+      userId: 1,
+      platform: "youtube",
+      name: "YouTube",
+      username: "@StanislavNikov",
+      url: "https://www.youtube.com/@StanislavNikov",
+      active: true,
+      order: 4
+    },
+    {
+      id: "6",
+      userId: 1,
+      platform: "github",
+      name: "GitHub",
+      username: "StanislavNikov",
+      url: "https://github.com/StanislavNikov",
+      active: true,
+      order: 5
+    },
+    {
+      id: "7",
+      userId: 1,
+      platform: "pinterest",
+      name: "Pinterest",
+      username: "StanislavMNikov",
+      url: "https://www.pinterest.com/StanislavMNikov/",
+      active: true,
+      order: 6
+    }
+  ];
+  
+
+  const userData = {
+    name: "Stanislav Nikov",
+    bio: "Web developer & graphic designer passionate about creative solutions",
+    location: "📍 Germany",
+    profileImage: "/profile-photo.jpg",
+    socialLinks: demoLinks.map(link => ({
+      ...link,
+      id: parseInt(link.id),
+      userId: 1
+    }))
+  }; 
+  
   // Fetch user data
-  const { data: userData, isLoading, error } = useQuery<UserData>({ 
+  const {  isLoading, error } = useQuery<UserData>({ 
     queryKey: ['/api/user-data'],
   });
   
