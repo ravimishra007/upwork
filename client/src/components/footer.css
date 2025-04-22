@@ -1,0 +1,120 @@
+/* Footer styles matching Fiverr exactly */
+.footer-package.site-footer {
+  border-top: 1px solid #e4e5e7;
+  background-color: #fff;
+  padding: 64px 0 32px;
+}
+
+.dark .footer-package.site-footer {
+  border-top: 1px solid #2d2d2d;
+  background-color: #121212;
+}
+
+.footer-wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styling for consistent alignment */
+.footer-columns > div > p {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  border-bottom: 1px solid #e4e5e7;
+}
+
+.dark .footer-columns > div > p {
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.footer-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+  padding: 0 32px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .footer-columns {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .footer-columns > div {
+    max-width: 25%;
+  }
+  
+  .footer-columns > div:first-child {
+    text-align: left;
+  }
+  
+  .footer-columns > div:nth-child(2) {
+    text-align: left;
+  }
+
+  .footer-columns > div:nth-child(3) {
+    text-align: center;
+  }
+  
+  .footer-columns > div:last-child {
+    /* Removed text-align: right as requested */
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e4e5e7;
+  padding: 16px 32px 16px;
+  gap: 16px;
+}
+
+.dark .footer-bottom {
+  border-top: 1px solid #2d2d2d;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 0;
+    width: 100%;
+  }
+}
+
+.footer-bottom .left,
+.footer-bottom .center,
+.footer-bottom .right {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom .left {
+    flex-shrink: 0;
+    width: 33.33%;
+    text-align: left;
+  }
+  
+  .footer-bottom .center {
+    flex-grow: 0;
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-bottom .right {
+    flex-shrink: 0;
+    width: 33.33%;
+    text-align: right;
+  }
+}

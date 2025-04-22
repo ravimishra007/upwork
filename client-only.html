@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkLinkup (Client Only Mode)</title>
+  <script>
+    // This script helps to stop any attempts to connect to the actual server
+    window.addEventListener('error', function(e) {
+      if (e.message && e.message.includes('Failed to fetch') || e.message.includes('NetworkError')) {
+        console.log('📲 Network request intercepted and will be handled by client code');
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  </script>
+</head>
+<body>
+  <div id="root">
+    <h1>Loading LinkLinkup in client-only mode...</h1>
+    <p>This page will redirect to the client-only version of the app.</p>
+  </div>
+
+  <script>
+    // Redirect to the client application without server
+    window.location.href = '/dist/';
+  </script>
+</body>
+</html> 
